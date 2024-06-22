@@ -1,4 +1,5 @@
 ## How to use ##
+Clone this repo
 1. Install docker
 2. ```cd /home```
 3. ```sudo docker build -t <image_name> .``` (image name could be anything)
