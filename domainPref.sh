@@ -51,4 +51,10 @@ for domain in "${domains[@]}"; do
     mkdir -p "$domain_dir"
 done
 
+# Copy the generated file to Apache document root and overwrite if it exists
+cp -f /home/users/core/mentees_domain.txt /var/www/html/mentees_domain.txt
+
+# Start the Apache server in a new session
+tmux new-session -d -s apache 'apache2ctl -D FOREGROUND'
+
 echo "Domain preferences and directories setup completed for mentee $mentee_username."
